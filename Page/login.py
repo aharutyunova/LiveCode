@@ -1,7 +1,7 @@
-from POM_Code.Lib.general_lib import General_Helper
+from Lib.general_lib import General_Helper
 from selenium.webdriver.common.by import By
-from POM_Code.test_data import test_data
-from POM_Code.config import config_data
+from test_data import test_data
+from config import config_data
 
 
 class Login_Page(General_Helper):
