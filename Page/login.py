@@ -13,6 +13,6 @@ class Login_Page(General_Helper):
 
     def login(self, username, password):
         self.find_and_click(self.login_btn)
-        self.find_and_send_keys(self.username_field, username)
-        self.find_and_send_keys(self.password_field, password)
+        self.find_and_send_keys(self.username_field,test_data['username'])
+        self.find_and_send_keys(self.password_field,test_data['password'])
         self.find_and_click(self.btn_signin)
