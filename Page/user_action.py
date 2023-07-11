@@ -9,7 +9,8 @@ class User_Action(General_Helper):
     added_amount = (By.XPATH, "//input[@id='amount']")
     checkout_btn = (By.XPATH, "//button[@id='Submit']")
 
-    def add_amount(self, amount):
+    def add_return_amount(self, amount):
         self.find_and_send_keys(self.added_amount, amount)
         self.find_and_click(self.checkout_btn)
-        self.get_element_value(self.acc_balance)
+        newval=self.get_element_value(self.acc_balance)
+        return newval
