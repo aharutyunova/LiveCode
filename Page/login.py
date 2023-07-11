@@ -10,9 +10,13 @@ class Login_Page(General_Helper):
     username_field = (By.XPATH, "//input[@name='username']")
     password_field = (By.XPATH, "//input[@name='password']")
     btn_signin = (By.XPATH, "//button[text()='Log in']")
+    useract_btn =  (By.XPATH, "//a[text()='User_Action']")
 
-    def login(self, username, password):
+    def login(self):
         self.find_and_click(self.login_btn)
         self.find_and_send_keys(self.username_field,test_data['username'])
         self.find_and_send_keys(self.password_field,test_data['password'])
         self.find_and_click(self.btn_signin)
+    
+    def useract(self):
+        self.find_and_click(self.useract_btn)
