@@ -26,6 +26,8 @@ class Register(General_Helper):
     fake = faker.Faker()
     count = 10
     
+    # Anna - Why you try 10 time input registration data in your page? In page you need have one methid which will fill registration data, 
+    # If you need register with different data, you need orginaze it directly in test case
     
     try:  
         for _ in range(count):
@@ -64,3 +66,7 @@ class Register(General_Helper):
         except AssertionError:
          logging.error(f"Assertion failed: Text does not match the expected value {e}")
  
+# Anna Don't put assertion in try except block, 
+#  if you use assert it means you want your code stop when fail, if you use try except, 
+#  it means you don't whant your code stop when fail. So it is 2 oposite logics, don't mix them
+# Also try use assertion in test cases not in your pages
