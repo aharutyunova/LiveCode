@@ -23,7 +23,10 @@ def test():
     assert int(test_data['amount']) == int(val2) - int(val1)
     logging.info("Test case is successfully passed")
 
-    driver = Driver_Lib().quit_driver()
+    driver.quit()
 
 if __name__ == "__main__":
     test()
+
+# Driver quit part will discuss, it was my mistake
+# Good job

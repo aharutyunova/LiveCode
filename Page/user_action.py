@@ -29,3 +29,5 @@ class User_Action(General_Helper):
             return new_val
         except Exception as e:
              logging.error("No number")
+
+# Anna - You could just have one function get_amount. and call this function before adding amount and after
