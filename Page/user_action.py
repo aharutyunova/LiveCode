@@ -23,3 +23,8 @@ class User_action(General_Helper):
             logging.info("Amount is added.")
         else:
             logging.error("Something went wrong!!!")
+
+# Anna - checking of amount value will be better to do in test case
+# Here would be better if add_amount method return res and in test case you will assert res with expected value
+
+# Other parts good enough, driver_lib part also changed correctly
