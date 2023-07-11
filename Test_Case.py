@@ -19,3 +19,5 @@ def Test():
 
 Test()
 
+# Anna - don't use upper casers for funciton names. Also if you have several objects create all of objects then go on with steps. 
+#  For example regis=Register(driver) object should be created in line 12 
