@@ -6,4 +6,5 @@ test_data = {
     "price":100,
     "reg_name":"test",
     "reg_pass":"123456789"
+
     }

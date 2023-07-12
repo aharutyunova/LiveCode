@@ -17,8 +17,7 @@ def test():
     main_page.pass_security()
     login_Page.login(test_data["admin_username"], test_data["password"])
     new_courses.add_new_course(test_data["title"], test_data["price"])
-    print(new_courses.find_text(
-            new_courses.success_msg) )
+
     try:
         assert new_courses.find_text(
             new_courses.success_msg) == "Course is added", logging.error("The course isn't added")
