@@ -1,5 +1,5 @@
 import logging
-#from faker import Faker
+from faker import Faker
 from selenium.webdriver.common.by import By
 from test_data import test_data
 from config import config_data
@@ -44,12 +44,12 @@ class RegistrationPage(General_Helper):
 
 
     def generate_random_user():
-        #fake = Faker()
-        #name = fake.name()
-        #email = fake.email()
-        #username = fake.user_name()
-        #password = fake.password()
-        #confirm_password = password
+        fake = Faker()
+        name = fake.name()
+        email = fake.email()
+        username = fake.user_name()
+        password = fake.password()
+        confirm_password = password
 
-        #return name, email, username, password, confirm_password
+        return name, email, username, password, confirm_password
         return
