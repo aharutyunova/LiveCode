@@ -17,13 +17,14 @@ class User_action(General_Helper):
 
     def add_amount(self, amount):
         self.find_and_click(self.user_action_btn)
-        value1 = self.get_element_value(self.balance_field)
+        value1 = int(self.get_element_value(self.balance_field))
         self.find_and_send_keys(self.amount_field, amount)
         self.find_and_click(self.submit_btn)
         value2 = self.get_element_value(self.balance_field)
-        res = int(value1)+int(amount)
+        value_list=[int(value1),int(value2)]
+        return value_list
 
-        if int(value2) == int(res):
-            logging.info("Amount is added.")
-        else:
-            logging.error("Something went wrong!!!")
+        # if int(value2) == int(res):
+        #     logging.info("Amount is added.")
+        # else:
+        #     logging.error("Something went wrong!!!")

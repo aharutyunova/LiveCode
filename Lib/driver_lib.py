@@ -9,3 +9,6 @@ class Driver_Lib:
 
     def quit_driver(self):
         self.driver.quit()
+
+    def switch_to_main(self):
+        self.driver.switch_to.window(self.driver.window_handles[0])

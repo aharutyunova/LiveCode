@@ -17,7 +17,8 @@ def test():
     main_page.pass_security()
     login_page.login(test_data["username"], test_data["password"])
     try:
-        user_action.add_amount(test_data["price"])
+        res_list = user_action.add_amount(test_data["price"])
+        assert res_list[1] == res_list[0]+test_data["price"],logging.error("An amount isn't added.")
         logging.info("The test2 is successfully passed.")
     finally:
         driver_lib.quit_driver()
