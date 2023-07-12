@@ -7,5 +7,5 @@ class Driver_Lib:
         driver.maximize_window()
         return driver
     
-    def quite_driver(self):
-        self.driver.quit()
+    def quit_driver(self,driver):
+        driver.quit()
