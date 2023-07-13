@@ -1,13 +1,20 @@
 from Lib.driver_lib import Driver_Lib   
 from Page.registration import RegistrationPage
+from config import config_data
+import test_data
 
+
+    
 def new_user_registration():
+    print("new_user_registration() started.")
+
+    name, email, username, password, confirm_password = test_data.generate_random_user()
+    
     driver = Driver_Lib().get_driver()
     registration_page = RegistrationPage(driver)
     
     registration_page.open_page()
        
-    name, email, username, password, confirm_password = registration_page.generate_random_user()
     
     registration_page.enter_name(name)
     registration_page.enter_email(email)
@@ -22,8 +29,6 @@ def new_user_registration():
 
     driver.quit()
 
-    if __name__ == '__main__':
-        new_user_registration()
-        
-       
 
+if __name__ == '__main__':
+    new_user_registration()
