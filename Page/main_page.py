@@ -11,11 +11,11 @@ class Main_Page(General_Helper):
     btn_send = (By.XPATH, "//button[@id='Send']")
 
     def open_page(self):
-        self.driver.get(config_data['url'])
+        self.driver.get(config_data["url"])
 
     def pass_security(self):
 
-        self.find_and_send_keys(self.email_field, config_data['email'])
-        self.find_and_send_keys(self.code_field, config_data['code'])
+        self.find_and_send_keys(self.email_field, config_data["email"])
+        self.find_and_send_keys(self.code_field, config_data["code"])
         self.find_and_click(self.btn_send)
     
