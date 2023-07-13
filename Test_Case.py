@@ -6,22 +6,16 @@ import logging
 import time
 
 
-def test():
+def test_registration():
    driverobj = Lib.driver_lib.Driver_Lib()
    driver = driverobj.get_driver()
-   generalLib =  General_Helper(logging)
+   generalLib = General_Helper(driver)
    mainobj = Main_Page(driver)
    regis = Register(driver)
    mainobj.open_page()
    mainobj.pass_security()
-   # regis.generate_registration_data()
    regis.register()
-   assert regis.text == regis.successMess
-   logging.info("Assertion successful: Text matches the expected value")
    
    
 
-test()
-
-# Anna - don't use upper casers for funciton names. Also if you have several objects create all of objects then go on with steps. 
-#  For example regis=Register(driver) object should be created in line 12 
+test_registration()

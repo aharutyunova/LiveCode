@@ -1,5 +1,6 @@
 from Lib.general_lib import General_Helper
 import Lib.driver_lib 
+import test_data
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -14,6 +15,7 @@ import logging
 
 class Register(General_Helper):
     
+    fakes = test_data.fake_data
     successMess = "Your account has been successfully registered.\n×"
     registPath = (By.XPATH,'//a[@href="/register"]')
     namePath = (By.XPATH,'//input[@id="name"]')
@@ -29,44 +31,18 @@ class Register(General_Helper):
     # Anna - Why you try 10 time input registration data in your page? In page you need have one methid which will fill registration data, 
     # If you need register with different data, you need orginaze it directly in test case
     
-    try:  
-        for _ in range(count):
-            first_name = fake.first_name()
-            random_number = str(fake.random_number(digits=3))
-            username = first_name.lower() + random_number
-            email = fake.email()
-            password = fake.password(length=8, digits=True, upper_case=True, lower_case=True)
-            confirmPass = password
-            
-    except Exception as e: 
-        General_Helper(logging)
-        logging.error("Can't generate a data for registration")
-
  
     def register(self):
         
-        try:
             self.find_and_click(self.registPath)
-            self.find_and_send_keys(self.namePath, self.first_name)
-            self.find_and_send_keys(self.emailPath, self.email)
-            self.find_and_send_keys(self.usernamePath, self.username)
-            self.find_and_send_keys(self.passwordPath, self.password)
-            self.find_and_send_keys(self.cpasswordPath, self.confirmPass)
+            self.find_and_send_keys(self.namePath, self.fakes['name'])
+            self.find_and_send_keys(self.emailPath, self.fakes['email'])
+            self.find_and_send_keys(self.usernamePath, self.fakes['username'])
+            self.find_and_send_keys(self.passwordPath, self.fakes['password'])
+            self.find_and_send_keys(self.cpasswordPath, self.fakes['confirmPass'])
             self.find_and_click(self.submitPath)
             registered_message = self.find(self.registerdMess)
             text = registered_message.text
-       
-        except Exception as e:
-            logging.error(f"An exception occurred: {e}")
+            assert text == self.successMess
+            logging.info("Assertion successful: Text matches the expected value")
 
-        try:
-         assert text == self.successMess
-         logging.info("Assertion successful: Text matches the expected value")
-       
-        except AssertionError:
-         logging.error(f"Assertion failed: Text does not match the expected value {e}")
- 
-# Anna Don't put assertion in try except block, 
-#  if you use assert it means you want your code stop when fail, if you use try except, 
-#  it means you don't whant your code stop when fail. So it is 2 oposite logics, don't mix them
-# Also try use assertion in test cases not in your pages
