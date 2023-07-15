@@ -32,3 +32,14 @@ def new_user_registration():
 
 if __name__ == '__main__':
     new_user_registration()
+
+# Anna comments
+# There is no need to write function in test_data.py, to return test data.
+# You can keep test data in test_data.py file as dictionary
+# example - {name: fake.name()}
+
+# You don't neet init method in registration.py file
+
+# Also in registration.py file no need to write self next to locators
+
+#  You did't pass security pege with your class email and pass, so your screen is stopen on Unauthorized popup

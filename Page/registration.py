@@ -5,15 +5,14 @@ from Lib.general_lib import General_Helper
 
 
 class RegistrationPage(General_Helper):
-    def __init__(self):
 
-        self.name_input = (By.XPATH, '//input[@id="name"]')
-        self.email_input = (By.XPATH, '//input[@id="email"]')
-        self.username_input = (By.XPATH, '//input[@id="username"]')
-        self.password_input = (By.XPATH, '//input[@id="password"]')
-        self.confirm_password_input = (By.XPATH, '//input[@id="confirm"]')
-        self.submit_button = (By.XPATH, '//button[@type="submit"]')
-        self.success_message = (By.XPATH, '//div[@id="flashwrapper"]')
+    name_input = (By.XPATH, '//input[@id="name"]')
+    email_input = (By.XPATH, '//input[@id="email"]')
+    username_input = (By.XPATH, '//input[@id="username"]')
+    password_input = (By.XPATH, '//input[@id="password"]')
+    confirm_password_input = (By.XPATH, '//input[@id="confirm"]')
+    submit_button = (By.XPATH, '//button[@type="submit"]')
+    success_message = (By.XPATH, '//div[@id="flashwrapper"]')
 
     def open_page(self):
         self.driver.get(config_data["url"] + "/register")
