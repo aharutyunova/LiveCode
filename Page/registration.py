@@ -11,7 +11,7 @@ class RegistrationPage(General_Helper):
     username_input = (By.XPATH, '//input[@id="username"]')
     password_input = (By.XPATH, '//input[@id="password"]')
     confirm_password_input = (By.XPATH, '//input[@id="confirm"]')
-    submit_button = (By.XPATH, '//button[@type="submit"]')
+    submit_button = (By.XPATH, '//input[@type="submit"]')
     success_message = (By.XPATH, '//div[@id="flashwrapper"]')
 
     def open_page(self):
