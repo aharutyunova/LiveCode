@@ -6,6 +6,6 @@ class Driver_Lib:
         self.driver = webdriver.Chrome()
         self.driver.maximize_window()
         return self.driver
-    
+
     def quit_driver(self):
         self.driver.quit()
