@@ -28,5 +28,4 @@ def test():
 if __name__ == "__main__":
     test()
 
-# Driver quit part will discuss, it was my mistake
 # Good job

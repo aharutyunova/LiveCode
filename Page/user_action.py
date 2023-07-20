@@ -21,23 +21,3 @@ class User_Action(General_Helper):
     def add_amount(self):
         self.find_and_send_keys(self.added_amount, test_data['amount'])
         self.find_and_click(self.checkout_btn)
-
-<<<<<<< HEAD
-    # def new_amount(self):
-    #     try:
-    #         new_val=self.get_element_value(self.acc_balance)
-    #         logging.info("Number exists")
-    #         return new_val
-    #     except Exception as e:
-    #          logging.error("No number")
-=======
-    def new_amount(self):
-        try:
-            new_val=self.get_element_value(self.acc_balance)
-            logging.info("Number exists")
-            return new_val
-        except Exception as e:
-             logging.error("No number")
-
-# Anna - You could just have one function get_amount. and call this function before adding amount and after
->>>>>>> 1cef03a0ee3eb72dc5ac3510054db311d19742c0
