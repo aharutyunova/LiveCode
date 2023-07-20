@@ -16,14 +16,14 @@ def test():
     main_page.pass_security()
     login.login()
     login.useract()
-    val1 = user_action.first_amount()
+    val1 = user_action.new_amount()
     user_action.add_amount()
     val2 = user_action.new_amount()
 
     assert int(test_data['amount']) == int(val2) - int(val1)
     logging.info("Test case is successfully passed")
 
-    driver = Driver_Lib().quit_driver()
+    driver.quit()
 
 if __name__ == "__main__":
     test()

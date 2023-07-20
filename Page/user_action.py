@@ -10,11 +10,11 @@ class User_Action(General_Helper):
     added_amount = (By.XPATH, "//input[@id='amount']")
     checkout_btn = (By.XPATH, "//button[@id='Submit']")
 
-    def first_amount(self):
+    def new_amount(self):
         try:
             val1 = self.get_element_value(self.acc_balance)
             logging.info("Number exists")
-            return val1
+            return int(val1)
         except Exception as e:
             logging.error("No number")
 
@@ -22,10 +22,10 @@ class User_Action(General_Helper):
         self.find_and_send_keys(self.added_amount, test_data['amount'])
         self.find_and_click(self.checkout_btn)
 
-    def new_amount(self):
-        try:
-            new_val=self.get_element_value(self.acc_balance)
-            logging.info("Number exists")
-            return new_val
-        except Exception as e:
-             logging.error("No number")
+    # def new_amount(self):
+    #     try:
+    #         new_val=self.get_element_value(self.acc_balance)
+    #         logging.info("Number exists")
+    #         return new_val
+    #     except Exception as e:
+    #          logging.error("No number")
