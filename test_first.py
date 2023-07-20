@@ -5,8 +5,9 @@ from Page.main_page import Main_Page
 from Page.user_action import User_Action
 from test_data import test_data
 import logging
+import pytest
 
-def test():
+def test_f():
     driver = Driver_Lib().get_driver()
     main_page = Main_Page(driver)
     login = Login_Page(driver)
@@ -27,5 +28,5 @@ def test():
     logging.info("Test case is successfully passed")
     Driver_Lib().quit_driver(driver)
 
-if __name__ == "__main__":
-    test()
+# if __name__ == "__main__":
+    # test()py
