@@ -50,4 +50,3 @@ class General_Helper():
                 return value
             time.sleep(0.3)
             attempts -= 1
-           

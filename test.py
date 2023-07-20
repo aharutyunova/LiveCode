@@ -15,17 +15,17 @@ def test():
     main_page.open_page()
     main_page.pass_security()
     login.login()
-    user_action.open_user_action_page()
-    old_balance = user_action.value_of_amount()
+    login.useract()
+    val1 = user_action.new_amount()
     user_action.add_amount()
-    new_balance = user_action.value_of_amount()
-    #calculate the old and after adding amount balance difference
-    difference_after_addamount = float(new_balance) - float(old_balance)
-    #check if added amount succesfully is added on balance or not
+    val2 = user_action.new_amount()
 
-    assert float(test_data['amount']) == difference_after_addamount
+    assert int(test_data['amount']) == int(val2) - int(val1)
     logging.info("Test case is successfully passed")
-    Driver_Lib().quit_driver(driver)
+
+    driver.quit()
 
 if __name__ == "__main__":
     test()
+
+# Good job
